@@ -15,6 +15,8 @@ You can see this shortcode-gallery in action on [my website](https://matze.rocks
 
 ## Installation
 
+### Method 1: Using git submodules
+
 Clone this git repository into your *themes* folder. 
 
 ```
@@ -31,6 +33,27 @@ theme = ["your-main-theme", "hugo-shortcode-gallery"]
 To read about hugo's theme components and how to use them have a look at 
 https://gohugo.io/hugo-modules/theme-components/.
 
+### Method 2: Using Hugo hugo-modules
+
+Add the following to your `hugo.yaml` (or other formats)
+```yaml
+module:
+  imports:
+    - path: github.com/pu-007/hugo-shortcode-gallery
+      mounts:
+        - source: layouts
+          target: layouts
+        - source: assets
+          target: assets
+        - source: static
+          target: static
+```
+
+And then you can download the module directly.
+
+```bash
+hugo mod get
+```
 
 ## Usage Example
 
